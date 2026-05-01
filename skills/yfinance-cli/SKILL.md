@@ -1,6 +1,6 @@
 ---
 name: yfinance-cli
-description: Use the repository-local `yfinance-cli` command to answer finance data requests about tickers, companies, price history, news, financial statements, option expirations and chains, or sector rankings. Trigger when a user asks for stock or market information that can be retrieved with `yfinance-cli`, especially when Codex should translate a natural-language request into one or more CLI commands and summarize the result.
+description: Use when answering finance-data requests with `yfinance-cli`, including ticker lookup, company snapshots, price history, ticker news, financial statements, option expiration dates or chains, and sector rankings. Trigger when a user asks for stock, ETF, or options information that maps to the CLI's `search`, `info`, `history`, `news`, `financials`, `options`, or `top` commands and Codex should run the CLI and summarize the result.
 ---
 
 # yfinance-cli
