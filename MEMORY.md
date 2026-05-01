@@ -11,6 +11,7 @@
 - Use `rich` for human-readable terminal output.
 - Target Python 3.12+.
 - Keep the CLI UX and project docs in English.
+- Treat `CONTEXT.md` as a short remaining-gaps note, not a permanent glossary.
 - Use `yfinance-cli` as both the distribution name and console script, and `yfinance_cli` as the import package.
 - Recommend `uv tool install yfinance-cli` as the primary installation path in README.
 - Prefer unit tests and CLI parsing/output tests for v1; do not rely on live Yahoo Finance integration tests.
