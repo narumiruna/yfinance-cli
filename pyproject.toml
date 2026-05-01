@@ -1,5 +1,5 @@
 [project]
-name            = "pythontemplate"
+name            = "yfinance-cli"
 version         = "0.0.0"
 description     = ""
 readme          = "README.md"
@@ -10,7 +10,7 @@ dependencies    = [
 ]
 
 [project.scripts]
-pythontemplate = "pythontemplate.cli:app"
+yf = "yfinance_cli.cli:app"
 
 [dependency-groups]
 dev = [

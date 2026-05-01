@@ -1,1 +1,1 @@
-# python-template
+# Yahoo Finance CLI
