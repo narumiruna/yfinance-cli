@@ -1,6 +1,7 @@
 ## GOTCHA
 
 - This repo starts greenfield; do not assume existing package layout, git metadata, or local commands.
+- In `yfinance` 1.3.0, sector rankings expose `top_companies` / `top_etfs` / `top_mutual_funds`, but `growth` and `performers` come from `Industry`; sector-level CLI commands must aggregate industry data.
 
 ## TASTE
 
