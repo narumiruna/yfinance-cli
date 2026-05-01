@@ -14,7 +14,7 @@ dependencies    = [
 ]
 
 [project.scripts]
-yf = "yfinance_cli.cli:app"
+yfinance-cli = "yfinance_cli.cli:app"
 
 [dependency-groups]
 dev = [

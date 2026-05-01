@@ -7,7 +7,7 @@
 ## Build, Test, and Development Commands
 
 - `uv sync`: install runtime and development dependencies for Python 3.12.
-- `uv run yf --help`: run the local CLI entrypoint.
+- `uv run yfinance-cli --help`: run the local CLI entrypoint.
 - `uv build`: build the wheel and source distribution locally.
 - `just format`: run `ruff format`.
 - `just lint`: run `ruff check --fix`.
@@ -27,7 +27,7 @@ Use `pytest` for unit and CLI tests. Prefer fast, deterministic tests that mock 
 
 ## Commit & Pull Request Guidelines
 
-The current history is minimal (`Initial commit`, `init commit`), so there is no strict repository-specific commit convention yet. Use short, imperative commit subjects and keep each commit scoped to one logical change. Open pull requests against `main`, and make sure lint, type checks, and tests pass locally first. Include a concise summary, link related issues when relevant, and add example `yf ...` commands or terminal output when you change CLI UX. `CODEOWNERS` assigns the repository to `@narumiruna`, so expect owner review before merge.
+The current history is minimal (`Initial commit`, `init commit`), so there is no strict repository-specific commit convention yet. Use short, imperative commit subjects and keep each commit scoped to one logical change. Open pull requests against `main`, and make sure lint, type checks, and tests pass locally first. Include a concise summary, link related issues when relevant, and add example `yfinance-cli ...` commands or terminal output when you change CLI UX. `CODEOWNERS` assigns the repository to `@narumiruna`, so expect owner review before merge.
 
 ## Configuration Notes
 

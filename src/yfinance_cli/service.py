@@ -158,7 +158,7 @@ class YFinanceService:
             raise CliError(
                 "NO_DATA",
                 f"No data is available for '{ticker}'.",
-                hint=f"Check the ticker symbol and try 'yf search {ticker}'.",
+                hint=f"Check the ticker symbol and try 'yfinance-cli search {ticker}'.",
             )
 
         payload = {
@@ -390,7 +390,7 @@ class YFinanceService:
             raise CliError(
                 "INVALID_PARAMS",
                 f"Expiration date '{expiration_date}' is not available for '{ticker}'.",
-                hint=f"Run 'yf options dates {ticker}' first. Available dates: {', '.join(available_dates)}",
+                hint=f"Run 'yfinance-cli options dates {ticker}' first. Available dates: {', '.join(available_dates)}",
             )
 
         chain = ticker_obj.option_chain(expiration_date)

@@ -110,7 +110,7 @@ def validate_history_modes(*, json_output: bool, chart: str | None, output: Path
         raise CliError(
             "INVALID_PARAMS",
             "The --output option is required when exporting a chart.",
-            hint="Example: yf history AAPL --chart price-volume --output aapl.webp",
+            hint="Example: yfinance-cli history AAPL --chart price-volume --output aapl.webp",
         )
     if output is not None and not chart:
         raise CliError(

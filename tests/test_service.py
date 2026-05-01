@@ -109,4 +109,4 @@ def test_get_options_chain_rejects_unknown_expiration(monkeypatch) -> None:
         YFinanceService().get_options_chain("AAPL", "2026-07-17", "all", 10)
 
     assert error.value.error_code == "INVALID_PARAMS"
-    assert "Run 'yf options dates AAPL' first" in (error.value.hint or "")
+    assert "Run 'yfinance-cli options dates AAPL' first" in (error.value.hint or "")

@@ -361,7 +361,7 @@ def test_top_command_rejects_unknown_sector_before_service_call() -> None:
 def test_json_error_output_uses_structured_error_schema() -> None:
     class ErrorService(FakeService):
         def get_info(self, ticker: str) -> dict:
-            raise CliError("INVALID_SYMBOL", "Ticker was not found.", hint="Try yf search BAD.")
+            raise CliError("INVALID_SYMBOL", "Ticker was not found.", hint="Try yfinance-cli search BAD.")
 
     result = runner.invoke(create_test_app(ErrorService()), ["info", "BAD", "--json"])
 
@@ -370,5 +370,5 @@ def test_json_error_output_uses_structured_error_schema() -> None:
     assert payload == {
         "error": "Ticker was not found.",
         "error_code": "INVALID_SYMBOL",
-        "hint": "Try yf search BAD.",
+        "hint": "Try yfinance-cli search BAD.",
     }
