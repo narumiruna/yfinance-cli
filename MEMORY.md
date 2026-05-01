@@ -30,3 +30,4 @@
 - Default `yfinance-cli history` to a summary plus the most recent table rows, not a full raw table dump.
 - Keep `yfinance-cli info` as one aggregate command rather than splitting it into quote/profile/valuation subcommands.
 - Do not add CLI-only shortcut commands; keep the command set aligned to the underlying capabilities.
+- Place repository-local Codex skills under `./skills/<skill-name>`.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use yfinance-cli"
+  short_description: "Translate finance questions into yfinance-cli"
+  default_prompt: "Use $yfinance-cli to answer this finance question by running yfinance-cli and summarizing the result."
