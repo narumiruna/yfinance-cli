@@ -31,3 +31,4 @@
 - Keep `yfinance-cli info` as one aggregate command rather than splitting it into quote/profile/valuation subcommands.
 - Do not add CLI-only shortcut commands; keep the command set aligned to the underlying capabilities.
 - Place repository-local Codex skills under `./skills/<skill-name>`.
+- In the repo-local `skills/yfinance-cli` skill, prefer `uv run yfinance-cli` inside this workspace and `uvx yfinance-cli` outside it.

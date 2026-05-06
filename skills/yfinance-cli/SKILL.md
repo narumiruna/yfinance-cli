@@ -7,9 +7,17 @@ description: Use when answering finance-data requests with `yfinance-cli`, inclu
 
 ## Overview
 
-Use `uv run yfinance-cli` from the repository root to fetch finance data locally and summarize the result for the user.
+Use `yfinance-cli` to fetch finance data and summarize the result for the user.
 
 Prefer running the CLI over guessing. If the user gives an ambiguous company name, theme, or partial symbol instead of a confirmed ticker, resolve it with `search` first.
+
+## Command Selection
+
+- If the current working directory is the `yfinance-cli` repository root or one of its subdirectories, run `uv run yfinance-cli ...` from the repository root.
+- Otherwise, run `uvx yfinance-cli ...`.
+- Treat `uv run` as the current local workspace or branch. Treat `uvx` as the latest published release.
+- If `uv run` fails inside the repository, report the local repository or environment issue and stop instead of falling back to `uvx`.
+- If `uvx` fails because `uv` is missing, the network is restricted, or package resolution fails, report the prerequisite and stop. Offer `uv tool install yfinance-cli` as the manual install path.
 
 ## Command Map
 
@@ -40,18 +48,19 @@ For multi-ticker comparisons, run one command per ticker and synthesize the comp
 
 ## Workflow
 
-1. Normalize the ticker or resolve it with `search`.
-2. Run the narrowest command that answers the user request.
-3. If the user asks for an option chain without a date, run `options dates` first.
-4. Summarize the result instead of dumping raw tables unless the user explicitly asks for raw output.
-5. Include the exact command when reproducibility helps.
-6. If the CLI returns a validation or not-found error, relay the CLI hint rather than guessing a workaround.
+1. Choose the execution path with the command selection rules above.
+2. Normalize the ticker or resolve it with `search`.
+3. Run the narrowest command that answers the user request.
+4. If the user asks for an option chain without a date, run `options dates` first.
+5. Summarize the result instead of dumping raw tables unless the user explicitly asks for raw output.
+6. Include the exact command when reproducibility helps.
+7. If the CLI returns a validation or not-found error, relay the CLI hint rather than guessing a workaround.
 
 ## Examples
 
-- "Summarize Apple" -> `uv run yfinance-cli info AAPL`
-- "Show Tesla over six months" -> `uv run yfinance-cli history TSLA --period 6mo --interval 1d`
-- "Find the ticker for Taiwan Semiconductor" -> `uv run yfinance-cli search "Taiwan Semiconductor" --type quotes`
-- "Show Nvidia news as JSON" -> `uv run yfinance-cli news NVDA --json`
-- "List SPY option expirations" -> `uv run yfinance-cli options dates SPY`
-- "Show top healthcare growth names" -> `uv run yfinance-cli top growth healthcare`
+- "Summarize Apple" -> `uvx yfinance-cli info AAPL`
+- "Show Tesla over six months" -> `uvx yfinance-cli history TSLA --period 6mo --interval 1d`
+- "Find the ticker for Taiwan Semiconductor" -> `uvx yfinance-cli search "Taiwan Semiconductor" --type quotes`
+- "Show Nvidia news as JSON" -> `uvx yfinance-cli news NVDA --json`
+- "List SPY option expirations" -> `uvx yfinance-cli options dates SPY`
+- "Show top healthcare growth names" -> `uvx yfinance-cli top growth healthcare`
